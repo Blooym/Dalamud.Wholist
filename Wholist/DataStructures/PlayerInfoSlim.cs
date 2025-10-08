@@ -80,14 +80,14 @@ namespace Wholist.DataStructures
         internal readonly unsafe bool IsInParty => ((Character*)basePlayer.Address)->IsPartyMember;
 
         /// <summary>
-        ///     Whether the player is paired and actively shown via Mare Synchronos.
+        ///     Whether the player is paired and actively shown via a Mod Sync Service.
         /// </summary>
-        internal readonly bool IsMarePair => Services.IpcManager.MareActivePairsIpcAvailable && Services.IpcManager.MareActivePairs.Contains(basePlayer.Address);
+        internal readonly bool IsSyncServicePair => Services.IpcManager.LightlessActivePairsIpcAvailable && Services.IpcManager.LightlessActivePairs.Contains(basePlayer.Address);
 
         /// <summary>
         ///     Whether the player is known to the local player (i.e. in party or friend).
         /// </summary>
-        internal readonly bool IsKnownPlayer => this.IsInParty || this.IsFriend || this.IsMarePair;
+        internal readonly bool IsKnownPlayer => this.IsInParty || this.IsFriend || this.IsSyncServicePair;
 
         /// <summary>
         ///     The pointer for the character data.

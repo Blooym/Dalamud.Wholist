@@ -134,7 +134,7 @@ namespace Wholist.Configuration
                 public Vector4 Default = new(1.0f, 1.0f, 1.0f, 1.0f);
                 public Vector4 Friend = new(1.0f, 0.5f, 0.0f, 1.0f);
                 public Vector4 Party = new(0.0f, 0.7f, 1.0f, 1.0f);
-                public Vector4 MarePaired = new(0.3f, 1.0f, 0.5f, 1.0f);
+                public Vector4 SyncServicePaired = new(0.3f, 1.0f, 0.5f, 1.0f);
             }
 
             /// <summary>

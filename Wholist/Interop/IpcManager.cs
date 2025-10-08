@@ -7,33 +7,33 @@ namespace Wholist.Interop
 {
     internal sealed class IpcManager
     {
-        // -- MareSynchronos --
+        // -- LightlessSync --
         // Active Pairs
-        private readonly ICallGateSubscriber<List<nint>> mareActivePairsCallGateSubscriber = Services.PluginInterface.GetIpcSubscriber<List<nint>>("MareSynchronos.GetHandledAddresses");
-        private readonly TimeSpan mareActivePairsCacheDuration = TimeSpan.FromSeconds(5);
-        private DateTime mareActivePairsLastUpdateTime = DateTime.MinValue;
-        private readonly HashSet<nint> mareActivePairs = [];
-        public HashSet<nint> MareActivePairs
+        private readonly ICallGateSubscriber<List<nint>> lightlessActivePairsCallGateSubscriber = Services.PluginInterface.GetIpcSubscriber<List<nint>>("LightlessSync.GetHandledAddresses");
+        private readonly TimeSpan lightlessActivePairsCacheDuration = TimeSpan.FromSeconds(5);
+        private DateTime lightlessActivePairsLastUpdateTime = DateTime.MinValue;
+        private readonly HashSet<nint> lightlessActivePairs = [];
+        public bool LightlessActivePairsIpcAvailable => this.lightlessActivePairsCallGateSubscriber.HasFunction;
+        public HashSet<nint> LightlessActivePairs
         {
             get
             {
-                if (!this.MareActivePairsIpcAvailable)
+                if (!this.LightlessActivePairsIpcAvailable)
                 {
                     return [];
                 }
-                else if ((DateTime.UtcNow - this.mareActivePairsLastUpdateTime) > this.mareActivePairsCacheDuration)
+                else if ((DateTime.UtcNow - this.lightlessActivePairsLastUpdateTime) > this.lightlessActivePairsCacheDuration)
                 {
-                    this.mareActivePairs.Clear();
-                    foreach (var item in this.mareActivePairsCallGateSubscriber.InvokeFunc())
+                    this.lightlessActivePairs.Clear();
+                    foreach (var item in this.lightlessActivePairsCallGateSubscriber.InvokeFunc())
                     {
-                        this.mareActivePairs.Add(item);
+                        this.lightlessActivePairs.Add(item);
                     }
-                    this.mareActivePairsLastUpdateTime = DateTime.UtcNow;
+                    this.lightlessActivePairsLastUpdateTime = DateTime.UtcNow;
                 }
-                return this.mareActivePairs;
+                return this.lightlessActivePairs;
             }
         }
-        public bool MareActivePairsIpcAvailable => this.mareActivePairsCallGateSubscriber.HasFunction;
 
         private IpcManager()
         {
