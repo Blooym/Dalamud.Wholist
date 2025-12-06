@@ -13,7 +13,7 @@ namespace Wholist.DTRHandling
         private const string NEARBY_PLAYERS_DTR_ICON_PAYLOAD = "\uE033";
         private readonly IDtrBarEntry nearbyPlayersDtrEntry;
 
-        public DTRManager()
+        private DTRManager()
         {
             this.nearbyPlayersDtrEntry = Services.DtrBar.Get("Nearby Player Count", $"{NEARBY_PLAYERS_DTR_ICON_PAYLOAD} -");
             this.nearbyPlayersDtrEntry.Tooltip = string.Format(Strings.DTR_NearbyPlayers_Tooltip, "-");
