@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Dalamud.NET.Sdk/13.0.0">
+<Project Sdk="Dalamud.NET.Sdk/13.1.0">
   <!-- Project Configuration -->
   <PropertyGroup>
     <AssemblyName>Wholist</AssemblyName>
-    <Version>1.11.1.0</Version>
+    <Version>1.11.2.0</Version>
     <PackageProjectUrl>https://github.com/Blooym/Dalamud.Wholist</PackageProjectUrl>
   </PropertyGroup>
 
