@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using Dalamud.Plugin.Ipc;
 using Wholist.Common;
 
