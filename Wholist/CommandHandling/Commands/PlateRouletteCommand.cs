@@ -35,7 +35,7 @@ namespace Wholist.CommandHandling.Commands
             }
 
             var players = PlayerManager.GetNearbyPlayers(true)
-                .Where(x => x.GameObjectId != Services.ClientState.LocalPlayer?.GameObjectId);
+                .Where(x => x.GameObjectId != Services.ObjectTable.LocalPlayer?.GameObjectId);
             if (!players.Any())
             {
                 ToastHelper.ShowErrorToast(Strings.Commands_WhoSettings_RandPlate_NoPlayers);

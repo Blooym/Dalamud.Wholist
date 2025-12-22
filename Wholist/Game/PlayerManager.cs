@@ -18,7 +18,7 @@ namespace Wholist.Game
         internal static unsafe IEnumerable<IPlayerCharacter> GetNearbyPlayers(bool filterBlocked)
             => Services.ObjectTable
                 .OfType<IPlayerCharacter>()
-                .Where(x => x.GameObjectId != Services.ClientState.LocalPlayer?.GameObjectId)
+                .Where(x => x.GameObjectId != Services.ObjectTable.LocalPlayer?.GameObjectId)
                 .Where(x => x.Level != 0 && x.ObjectIndex < 240)
                 .Where(x => !filterBlocked || !BlockedCharacterHandler.IsCharacterBlocked((BattleChara*)x.Address));
 
@@ -30,7 +30,7 @@ namespace Wholist.Game
         /// <param name="prioritizeKnownPlayers">Whether to prioritize the client known players.</param>
         /// <param name="filterAfk">Whether to filter out AFK players.</param>
         /// <returns></returns>
-        internal static unsafe List<PlayerInfoSlim> GetNearbyPlayersSlim(int maxPlayers = 100, bool filterAfk = false, bool prioritizeKnownPlayers = false, bool filterLowLevel = false)
+        internal static List<PlayerInfoSlim> GetNearbyPlayersSlim(int maxPlayers = 100, bool filterAfk = false, bool prioritizeKnownPlayers = false, bool filterLowLevel = false)
         {
             var players = new List<PlayerInfoSlim>(maxPlayers);
 
@@ -74,7 +74,7 @@ namespace Wholist.Game
         {
             foreach (var member in Services.PartyList)
             {
-                if (member.ObjectId == playerCharacter.GameObjectId)
+                if (member.EntityId == playerCharacter.EntityId)
                 {
                     return true;
                 }

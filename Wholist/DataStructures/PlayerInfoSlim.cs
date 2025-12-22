@@ -50,7 +50,7 @@ namespace Wholist.DataStructures
         {
             get
             {
-                var localPlayer = Services.ClientState.LocalPlayer;
+                var localPlayer = Services.ObjectTable.LocalPlayer;
                 if (localPlayer == null)
                 {
                     return 0;
