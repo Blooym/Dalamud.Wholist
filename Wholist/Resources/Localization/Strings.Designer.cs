@@ -644,5 +644,17 @@ namespace Wholist.Resources.Localization {
                 return ResourceManager.GetString("UserInterface_NearbyPlayers_InvitedToParty", resourceCulture);
             }
         }
+        
+        internal static string UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection {
+            get {
+                return ResourceManager.GetString("UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection", resourceCulture);
+            }
+        }
+        
+        internal static string UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection_Description {
+            get {
+                return ResourceManager.GetString("UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection_Description", resourceCulture);
+            }
+        }
     }
 }

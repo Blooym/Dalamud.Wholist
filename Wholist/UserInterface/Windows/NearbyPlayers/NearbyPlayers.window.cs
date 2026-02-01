@@ -167,6 +167,7 @@ Any number of filters can be used in one search (e.g. ""name:meteor level:50 job
             ImGui.TableNextColumn();
 
             // Distance.
+            DrawDirectionArrow(NearbyPlayersLogic.GetPlayerDirection(obj));
             SiGui.Text($"{obj.Distance} yalms");
         }
 
@@ -244,6 +245,38 @@ Any number of filters can be used in one search (e.g. ""name:meteor level:50 job
                     NearbyPlayersLogic.SearchPlayerOnLodestone(obj.Name, obj.HomeWorld);
                 }
             }
+        }
+
+        private static void DrawDirectionArrow(double? maybeDirection)
+        {
+            const double AngleShift = 0.5235987755982988;
+
+            ImGui.Dummy(new Vector2(ImGui.GetTextLineHeight()));
+            ImGui.SameLine(0.0f, ImGui.GetStyle().ItemInnerSpacing.X);
+            if (maybeDirection is not { } direction)
+            {
+                return;
+            }
+
+            var foregroundColor = ImGui.GetColorU32(ImGuiCol.Text);
+            var rectMin = ImGui.GetItemRectMin();
+            var rectMax = ImGui.GetItemRectMax();
+            var rectMid = Vector2.Lerp(rectMin, rectMax, 0.5f);
+            var innerHalfSize = (rectMax - rectMin) * 0.4f;
+            var mainVec = UnitVector(direction);
+            var arrowHead = rectMid + (innerHalfSize * mainVec);
+            var arrowTail = rectMid - (innerHalfSize * mainVec * 0.33333333f);
+            var drawList = ImGui.GetWindowDrawList();
+            drawList.AddTriangleFilled(arrowHead, arrowTail,
+                rectMid - (innerHalfSize * UnitVector(direction + AngleShift)), foregroundColor);
+            drawList.AddTriangleFilled(arrowTail, arrowHead,
+                rectMid - (innerHalfSize * UnitVector(direction - AngleShift)), foregroundColor);
+        }
+
+        private static Vector2 UnitVector(double angle)
+        {
+            var (sin, cos) = Math.SinCos(angle);
+            return new Vector2((float)cos, (float)sin);
         }
     }
 }
