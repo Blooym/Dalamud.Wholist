@@ -62,7 +62,7 @@
     <value>Rechercher...</value>
   </data>
   <data name="Windows_Settings_Title" xml:space="preserve">
-    <value>[{0} Paramètres</value>
+    <value>[{0}] Paramètres</value>
   </data>
   <data name="Commands_WhoSettings_Help" xml:space="preserve">
     <value>Ouvre la fenêtre des paramètres du plugin.</value>
