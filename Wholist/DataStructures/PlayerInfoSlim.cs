@@ -60,6 +60,55 @@ namespace Wholist.DataStructures
         }
 
         /// <summary>
+        ///     The direction of the player from the local player, relative to the direction the local player is facing.
+        /// </summary>
+        /// <remarks>
+        ///     This is returned in radians, for use with sin and cos, and is not normalized to any particular range.
+        /// </remarks>
+        internal readonly unsafe double? PlayerRelativeDirection
+        {
+            get
+            {
+                var localPlayer = Services.ObjectTable.LocalPlayer;
+                if (localPlayer == null)
+                {
+                    return null;
+                }
+
+                var nativeLocalPlayer = (GameObject*)localPlayer.Address;
+                var positionFromLocalPlayer = nativeLocalPlayer->Position - this.Position;
+                return Math.Atan2(positionFromLocalPlayer.Z, positionFromLocalPlayer.X) + nativeLocalPlayer->Rotation;
+            }
+        }
+
+        /// <summary>
+        ///     The direction of the player from the local player, relative to the direction the camera is pointing at.
+        /// </summary>
+        /// <remarks>
+        ///     This is returned in radians, for use with sin and cos, and is not normalized to any particular range.
+        /// </remarks>
+        internal readonly unsafe double? CameraRelativeDirection
+        {
+            get
+            {
+                var localPlayer = Services.ObjectTable.LocalPlayer;
+                if (localPlayer == null)
+                {
+                    return null;
+                }
+
+                var activeCamera = CameraManager.Instance()->GetActiveCamera();
+                if (activeCamera == null)
+                {
+                    return null;
+                }
+
+                var positionFromLocalPlayer = ((GameObject*)localPlayer.Address)->Position - this.Position;
+                return Math.Atan2(positionFromLocalPlayer.Z, positionFromLocalPlayer.X) + activeCamera->DirH + Math.PI;
+            }
+        }
+
+        /// <summary>
         ///     The colour of the player's name.
         /// </summary>
         internal readonly Vector4 NameColour => PlayerManager.GetPlayerNameColour(this);
