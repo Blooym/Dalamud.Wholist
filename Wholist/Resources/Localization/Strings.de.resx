@@ -313,4 +313,10 @@
   <data name="UserInterface_Settings_NearbyPlayers_InfoBarPlayers_Description" xml:space="preserve">
     <value>Zeige die Anzahl naher Spieler in der Server-Infoleiste an. Dies kann in den Dalamud Einstellungen under "Server-Infoleiste" -> "Nearby Player Count" ausgeschaltet und bewegt werden.</value>
   </data>
+  <data name="UserInterface_NearbyPlayers_Players_Submenu_InviteToParty" xml:space="preserve">
+    <value>Zur Gruppe einladen</value>
+  </data>
+  <data name="UserInterface_NearbyPlayers_InvitedToParty" xml:space="preserve">
+    <value>{0} zur Gruppe eingeladen</value>
+  </data>
 </root>
