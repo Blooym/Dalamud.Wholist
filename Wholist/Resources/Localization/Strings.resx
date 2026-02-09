@@ -326,4 +326,10 @@
   <data name="UserInterface_NearbyPlayers_InvitedToParty" xml:space="preserve">
     <value>Invited {0} to party</value>
   </data>
+  <data name="UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection" xml:space="preserve">
+    <value>Display player-relative directions</value>
+  </data>
+  <data name="UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection_Description" xml:space="preserve">
+    <value>Display directions relative to your character's orientation, rather than to the camera's orientation.</value>
+  </data>
 </root>

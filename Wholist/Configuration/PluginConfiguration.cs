@@ -97,6 +97,11 @@ namespace Wholist.Configuration
             public bool FilterLowLevel = true;
 
             /// <summary>
+            ///     Whether to show directions relative to the local player, rather than to the camera.
+            /// </summary>
+            public bool PlayerRelativeDirection;
+
+            /// <summary>
             ///     The region to perform a lodestone player search lookup on.
             /// </summary>
             public LodestoneSearchRegion LodestonePlayerSearchRegion = LodestoneSearchRegion.Europe;
