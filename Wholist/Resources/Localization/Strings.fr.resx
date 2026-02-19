@@ -298,4 +298,10 @@
   <data name="UserInterface_Settings_NearbyPlayers_FilterBlockedPlayers_Description" xml:space="preserve">
     <value>Retirer les joueurs bloqués de la liste des joueurs proches.</value>
   </data>
+  <data name="UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection" xml:space="preserve">
+    <value>Afficher les directions par rapport au joueur</value>
+  </data>
+  <data name="UserInterface_Settings_NearbyPlayers_PlayerRelativeDirection_Description" xml:space="preserve">
+    <value>Afficher les directions par rapport à l'orientation de votre personnage, plutôt qu'à l'orientation de la caméra.</value>
+  </data>
 </root>

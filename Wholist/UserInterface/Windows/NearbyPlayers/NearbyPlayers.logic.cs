@@ -194,6 +194,16 @@ namespace Wholist.UserInterface.Windows.NearbyPlayers
             _ => throw new NotImplementedException()
         };
 
+        /// <summary>
+        ///     Gets the direction towards the given player based on the current configuration.
+        /// </summary>
+        /// <param name="player">The player.</param>
+        /// <returns>The direction towards the player.</returns>
+        internal static double? GetPlayerDirection(PlayerInfoSlim player) =>
+            Services.Configuration.NearbyPlayers.PlayerRelativeDirection
+                ? player.PlayerRelativeDirection
+                : player.CameraRelativeDirection;
+
         internal static bool IsPvP => Services.ClientState.IsPvP;
     }
 }
