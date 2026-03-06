@@ -10,7 +10,6 @@ using Sirensong.Game.Enums;
 using Sirensong.IoC;
 using Wholist.Configuration;
 using Wholist.DTRHandling;
-using Wholist.Interop;
 using Wholist.Resources.Localization;
 using Wholist.UserInterface;
 
@@ -45,7 +44,6 @@ namespace Wholist.Common
         internal static WindowManager WindowManager { get; private set; } = null!;
         internal static PluginConfiguration Configuration { get; private set; } = null!;
         internal static DTRManager DtrManager { get; private set; } = null!;
-        internal static IpcManager IpcManager { get; private set; } = null!;
 
         /// <summary>
         ///     Initializes the service class.
@@ -81,7 +79,6 @@ namespace Wholist.Common
         /// </summary>
         private static void InitializeServices()
         {
-            IpcManager = ServiceContainer.GetOrCreateService<IpcManager>();
             WindowManager = ServiceContainer.GetOrCreateService<WindowManager>();
             DtrManager = ServiceContainer.GetOrCreateService<DTRManager>();
             ServiceContainer.CreateService<CommandHandling.CommandManager>();
