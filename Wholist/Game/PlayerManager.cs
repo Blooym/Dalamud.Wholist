@@ -97,10 +97,6 @@ namespace Wholist.Game
             {
                 return Services.Configuration.Colours.Name.Friend;
             }
-            if (playerInfo.IsSyncServicePair)
-            {
-                return Services.Configuration.Colours.Name.SyncServicePaired;
-            }
             return Services.Configuration.Colours.Name.Default;
         }
     }

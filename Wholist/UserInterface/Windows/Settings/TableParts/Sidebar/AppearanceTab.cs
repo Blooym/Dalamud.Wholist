@@ -60,10 +60,6 @@ namespace Wholist.UserInterface.Windows.Settings.TableParts.Sidebar
             {
                 Services.Configuration.Save();
             }
-            if (Services.IpcManager.LightlessActivePairsIpcAvailable && ColourEdit.Draw("Sync Pair [3rd party]", ref Services.Configuration.Colours.Name.SyncServicePaired))
-            {
-                Services.Configuration.Save();
-            }
         }
 
         private static void DrawRoleColours()
