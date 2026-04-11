@@ -2,6 +2,7 @@
 obj/
 bin/
 Lib/
+.direnv/
 
 .idea/
 *.user
