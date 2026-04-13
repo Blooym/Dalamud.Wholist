@@ -3,7 +3,7 @@
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.dalamud = {
-    url = "github:Blooym/dalamud-packages";
+    url = "github:Blooym/dalamud-nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 

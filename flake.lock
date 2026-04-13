@@ -7,16 +7,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1776101805,
-        "narHash": "sha256-l/RuSlQ7f+aCl705dKiJRdfvk4NSqHVN2+SFgZZ/FU0=",
+        "lastModified": 1776102992,
+        "narHash": "sha256-0NOjcz70MbJfV1STcQ4pfaCYAT99PEKAowb/ElflHUY=",
         "owner": "Blooym",
-        "repo": "dalamud-packages",
-        "rev": "ff77e6a6fe603b2a530f08b7b5f0994be299dca0",
+        "repo": "dalamud-nix",
+        "rev": "10e1d6e1993ea7ffdb246ee209d8548ac469f307",
         "type": "github"
       },
       "original": {
         "owner": "Blooym",
-        "repo": "dalamud-packages",
+        "repo": "dalamud-nix",
         "type": "github"
       }
     },
