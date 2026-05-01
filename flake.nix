@@ -20,7 +20,7 @@
       devShells = forAllSystems (
         system: pkgs:
         let
-          dalamudPkg = dalamud.packages.${system}.release;
+          dalamudPkg = dalamud.packages.${system}.stg;
         in
         {
           default = pkgs.mkShell {

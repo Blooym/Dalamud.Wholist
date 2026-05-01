@@ -148,7 +148,7 @@ namespace Wholist.UserInterface.Windows.NearbyPlayers
         {
             UIModule.Instance()->ProcessChatBoxEntry(Utf8String.FromString($"/tell {name}@{homeworldName}"));
             ChatHelper.Print(Strings.UserInterface_NearbyPlayers_SetChatTarget.Format($"{name}@{homeworldName}"));
-            UIGlobals.PlaySoundEffect((uint)SoundEffect.Se16, 0, 0, 0);
+            UIGlobals.PlaySoundEffect((uint)SoundEffect.Se16, default, default, default);
         }
 
         /// <summary>

@@ -50,6 +50,11 @@ namespace Wholist.UserInterface.Windows.NearbyPlayers
 
         public override bool DrawConditions()
         {
+            if (!Services.ClientState.IsLoggedIn)
+            {
+                return false;
+            }
+
             if (Services.Configuration.NearbyPlayers.HideInCombat && Services.Condition[ConditionFlag.InCombat])
             {
                 return false;
