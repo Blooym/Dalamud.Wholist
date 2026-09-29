@@ -36,7 +36,7 @@ namespace Wholist.Game
 
             // Get nearby players from the object table and order by them by distance to the local player
             // so that when the list is truncated, the closest players are kept.
-            foreach (var player in GetNearbyPlayers(Services.Configuration.NearbyPlayers.FilterBlockedPlayers).OrderBy(p => p.YalmDistanceX))
+            foreach (var player in GetNearbyPlayers(Services.Configuration.NearbyPlayers.FilterBlockedPlayers).OrderBy(p => p.CurrentDistance))
             {
                 if (players.Count >= maxPlayers)
                 {

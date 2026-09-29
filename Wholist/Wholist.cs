@@ -11,7 +11,7 @@ namespace Wholist
         /// </summary>
         public Plugin(IDalamudPluginInterface pluginInterface)
         {
-            SirenCore.Initialize(pluginInterface, Constants.PluginName);
+            SirenCore.Initialize(pluginInterface, pluginInterface.InternalName);
             Services.Initialize(pluginInterface);
         }
 

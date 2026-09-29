@@ -22,10 +22,7 @@ namespace Wholist.UserInterface
             }
 
             var nearbyWindow = this.windows.FirstOrDefault(window => window is NearbyPlayersWindow);
-            if (nearbyWindow is not null)
-            {
-                nearbyWindow.IsOpen = true;
-            }
+            nearbyWindow?.IsOpen = true;
         }
 
         /// <summary>
@@ -36,10 +33,7 @@ namespace Wholist.UserInterface
             ObjectDisposedException.ThrowIf(this.disposedValue, nameof(this.WindowingSystem));
 
             var nearbyWindow = this.windows.FirstOrDefault(window => window is NearbyPlayersWindow);
-            if (nearbyWindow is not null)
-            {
-                nearbyWindow.IsOpen = false;
-            }
+            nearbyWindow?.IsOpen = false;
         }
 
         private bool disposedValue;
@@ -52,7 +46,7 @@ namespace Wholist.UserInterface
         /// <summary>
         ///     The windowing system.
         /// </summary>
-        private WindowSystem WindowingSystem { get; } = new(Constants.PluginName);
+        private WindowSystem WindowingSystem { get; } = new(Services.PluginInterface.InternalName);
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="WindowManager" /> class.

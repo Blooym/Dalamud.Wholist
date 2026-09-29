@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777596751,
-        "narHash": "sha256-OX+JA/EuUELGa+UobLzJI3o5CQsB2sSJ8fZSzJ4deLg=",
+        "lastModified": 1790704045,
+        "narHash": "sha256-zhjPYOvNMRvZpARhL2nkw+xIptT1bnArsFUJCubJYz4=",
         "owner": "Blooym",
         "repo": "dalamud-nix",
-        "rev": "f724e104e34a0ce0f9f61d5d9cfa5f52bb26f865",
+        "rev": "4ab4f6a158d64d99bdf33df027762068eba2ce7b",
         "type": "github"
       },
       "original": {
@@ -22,11 +22,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1777268161,
-        "narHash": "sha256-bxrdOn8SCOv8tN4JbTF/TXq7kjo9ag4M+C8yzzIRYbE=",
+        "lastModified": 1790578696,
+        "narHash": "sha256-ZoxIApko70jCdbH3l20HWXOBaT2HZd87orzd2yJ9dVE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+        "rev": "7a0f122f5090cf4c2ade2a13a0e229d4e19ba71f",
         "type": "github"
       },
       "original": {

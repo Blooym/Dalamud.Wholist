@@ -254,7 +254,7 @@ Any number of filters can be used in one search (e.g. ""name:meteor level:50 job
 
         private static void DrawDirectionArrow(double? maybeDirection)
         {
-            const double AngleShift = 0.5235987755982988;
+            const double angleShift = 0.5235987755982988;
 
             ImGui.Dummy(new Vector2(ImGui.GetTextLineHeight()));
             ImGui.SameLine(0.0f, ImGui.GetStyle().ItemInnerSpacing.X);
@@ -273,9 +273,9 @@ Any number of filters can be used in one search (e.g. ""name:meteor level:50 job
             var arrowTail = rectMid - (innerHalfSize * mainVec * 0.33333333f);
             var drawList = ImGui.GetWindowDrawList();
             drawList.AddTriangleFilled(arrowHead, arrowTail,
-                rectMid - (innerHalfSize * UnitVector(direction + AngleShift)), foregroundColor);
+                rectMid - (innerHalfSize * UnitVector(direction + angleShift)), foregroundColor);
             drawList.AddTriangleFilled(arrowTail, arrowHead,
-                rectMid - (innerHalfSize * UnitVector(direction - AngleShift)), foregroundColor);
+                rectMid - (innerHalfSize * UnitVector(direction - angleShift)), foregroundColor);
         }
 
         private static Vector2 UnitVector(double angle)

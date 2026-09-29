@@ -16,7 +16,7 @@ namespace Wholist.UserInterface.Windows.Settings
         private readonly SettingsLogic logic = new();
 
         /// <inheritdoc />
-        public SettingsWindow() : base(string.Format(Strings.Windows_Settings_Title, Constants.PluginName))
+        public SettingsWindow() : base(string.Format(Strings.Windows_Settings_Title, Services.PluginInterface.Manifest.Name))
         {
             this.Size = new Vector2(700, 450);
             this.SizeCondition = ImGuiCond.FirstUseEver;
